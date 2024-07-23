@@ -1,0 +1,152 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+.background-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-image: url('backgroundImage.jpeg');
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+    transition: opacity 1s ease-in-out;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    z-index: 2;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 10px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+.content {
+    position: relative;
+    z-index: 1;
+}
+
+header {
+    text-align: center;
+    padding: 100px 20px;
+    color: white;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.profile-photo {
+    border-radius: 50%;
+    width: 450px;
+    height: 500px;
+    object-fit: cover;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 3em;
+    margin: 0;
+}
+
+p {
+    font-size: 1.2em;
+}
+
+main {
+    background-color: white;
+    padding: 20px 0;
+}
+
+section {
+    margin-bottom: 20px;
+}
+
+.scroller {
+    display: grid;
+    & > * {
+      grid-area: 1 / 1;
+      width: 100%;
+    }
+    .mask {
+      z-index: 2;
+    }
+    .image {
+        grid-area: 1 / 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .image img {
+        max-width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .mask {
+    mix-blend-mode: lighten;
+    background: white;
+  }
+
+  path {
+    stroke-width: 200;
+    stroke-dasharray: 5700;
+    stroke-dashoffset: 5700;
+    view-timeline-name: --scribble-path;
+    view-timeline-axis: block;
+    animation: linear draw both;
+    animation-timeline: --scribble-path;
+    animation-range: entry 10% cover 50%;
+  }
+
+  @keyframes draw {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+
+  .spacer {
+    height: 90vh;
+  }
+
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background-color: #333;
+    color: white;
+}
